@@ -1,0 +1,463 @@
+{
+  "id": "cffb0294-f765-463c-8b5e-a1d5f657c926",
+  "version": "2.0",
+  "name": "project_2_FIN_login_test",
+  "url": "http://automationpractice.com/index.php",
+  "tests": [{
+    "id": "db281004-e9a2-42a4-ab67-73d79f7cb954",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "15e607a6-4987-4a3e-a2ff-af0c6dd41b6d",
+    "name": "project_2_login_test_10_FIN_empty_password",
+    "commands": [{
+      "id": "b1440b84-8cbc-4d84-b399-25cfb7ee98d1",
+      "comment": "",
+      "command": "store",
+      "target": "aa@aa.com",
+      "targets": [],
+      "value": "varLogin "
+    }, {
+      "id": "823be97b-68e2-42e8-a140-094307dec718",
+      "comment": "",
+      "command": "store",
+      "target": "",
+      "targets": [],
+      "value": "varPasswd"
+    }, {
+      "id": "e2b04be5-58f0-4ae1-982a-fb2c175c9a02",
+      "comment": "",
+      "command": "run",
+      "target": "project_2_login_test_8_FIN",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "703abb3f-f5a0-4a12-b554-2a7114589a80",
+    "name": "project_2_login_test_8_FIN",
+    "commands": [{
+      "id": "32e89d68-a9e7-4ad7-8e9c-bdee6d046acc",
+      "comment": "",
+      "command": "open",
+      "target": "http://automationpractice.com/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d39fae2c-252b-4af9-9834-6b40ebc3ae04",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),\"Sign in\")]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cbba3f7d-6342-4950-8080-51dd6dafb301",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "064f801d-332e-4ebb-b86d-52962dabec6b",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [],
+      "value": "${varLogin}"
+    }, {
+      "id": "79646794-34bb-49f8-ad3e-8d480fab5e8d",
+      "comment": "",
+      "command": "click",
+      "target": "id=passwd",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b45f785-3040-40dd-ad42-6191348371af",
+      "comment": "",
+      "command": "type",
+      "target": "id=passwd",
+      "targets": [],
+      "value": "${varPasswd}"
+    }, {
+      "id": "eb025f4b-a049-485b-9d32-417a25aefd12",
+      "comment": "because we need to add for span class form-error/ form-ok",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09a2d240-ce02-49b3-bc2e-18a22f2a836c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#login_form .submit",
+      "targets": [
+        ["css=#login_form .submit", "css:finder"],
+        ["xpath=//form[@id='login_form']/div/p[2]", "xpath:idRelative"],
+        ["xpath=//form/div/p[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5f69dcc-47f4-43b0-aa14-91ba313c23aa",
+      "comment": "",
+      "command": "//verifyText",
+      "target": "xpath=//div[@id=\"center_column\"]/div[@class=\"alert alert-danger\"]/p",
+      "targets": [],
+      "value": "There is 1 error"
+    }, {
+      "id": "6ff99ff4-1c9f-4f57-af42-2c6d30ccf145",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7cdbc79-fa69-48f3-9572-a8e98a662914",
+      "comment": "email + password are not empty but wrong value",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1a9a278-324f-4674-9ec7-28e0bb314f63",
+      "comment": "",
+      "command": "if",
+      "target": "${varLogin} !== '' && ${varPasswd} !== ''",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30990594-eba0-4835-b7c5-e9ef6e199d77",
+      "comment": "",
+      "command": "if",
+      "target": "document.body.contains(document.querySelector(\"div.form-error\"))",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d7b903b-08be-4e9e-a8dc-79af3ea4d5ab",
+      "comment": "",
+      "command": "echo",
+      "target": "find div.form-error",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81b57536-a8d7-453c-8a87-f78a8055e13a",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitLogin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b221a27-1015-4dee-837b-e7a4c3ca6389",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@id=\"center_column\"]/div[@class=\"alert alert-danger\"]/ol",
+      "targets": [],
+      "value": "Invalid email address."
+    }, {
+      "id": "5f0799f2-0c9a-40a4-8833-7d4b484319d1",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "134acfe0-0567-4683-9e4c-f7868d4a1dad",
+      "comment": "",
+      "command": "else",
+      "target": "document.body.contains(document.querySelector(\"div.form-ok\")) ",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30e2e503-6064-4aea-b209-ef8bedcda5e0",
+      "comment": "",
+      "command": "if",
+      "target": "document.body.contains(document.querySelector(\"span.form-error\"))",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2a282cb-47ed-4414-8170-3644d48896f8",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitLogin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8fb891b-b2e1-4436-b6ff-e1bab6ac6c18",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@id=\"center_column\"]/div[@class=\"alert alert-danger\"]/ol",
+      "targets": [],
+      "value": "Invalid password."
+    }, {
+      "id": "acd18c6a-7c68-4b1c-a96e-6c1f5c73fed7",
+      "comment": "",
+      "command": "else",
+      "target": "document.body.contains(document.querySelector(\"span.form-ok\"))",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "129a8423-b52b-4d5b-b8c7-48156a88b624",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitLogin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb5be838-793d-4cb8-86d6-bc36eb77914d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@id=\"center_column\"]/div[@class=\"alert alert-danger\"]/ol",
+      "targets": [],
+      "value": "Authentication failed."
+    }, {
+      "id": "29bae3c9-b98c-4637-9890-8c124065d0ea",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "858113c7-6603-4377-88aa-14e35add4ff3",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef823c8a-5bc1-48f7-8c40-5bf2728818b3",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cab9a2df-a211-4646-9ea3-660de071de6d",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4d60bf1-61c4-495a-8956-5efb244231bf",
+      "comment": "email + password one or both are empty",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "32ea122b-a946-4095-bb68-acefed50795b",
+      "comment": "",
+      "command": "if",
+      "target": "${varLogin} == ''",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f28462f-4eef-49a6-af58-9ef2ded3ce6a",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitLogin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4257456-47ff-4100-9894-46cf16029220",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@id=\"center_column\"]/div[@class=\"alert alert-danger\"]/ol",
+      "targets": [],
+      "value": "An email address required."
+    }, {
+      "id": "66d4abb4-ebe5-4d08-bbb4-a1efcf358158",
+      "comment": "",
+      "command": "elseIf",
+      "target": "${varLogin} !== '' && ${varPasswd} == ''",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a4e5a3e-2a6d-497a-be48-8fc0463d3908",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitLogin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5840d40c-c0f1-4f60-96b7-35c1e839a857",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@id=\"center_column\"]/div[@class=\"alert alert-danger\"]/ol",
+      "targets": [],
+      "value": "Password is required."
+    }, {
+      "id": "c611055b-c33f-42e6-ae55-28a3617d6506",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4a9edc97-69af-4998-a9fd-d8708b40fb6e",
+    "name": "project_2_login_test_9_FIN_empty_login",
+    "commands": [{
+      "id": "a87e684d-26a8-4ab9-939a-8372676b73dd",
+      "comment": "",
+      "command": "store",
+      "target": "",
+      "targets": [],
+      "value": "varLogin "
+    }, {
+      "id": "f97ec2c9-1508-42a9-ad57-892b4859b72a",
+      "comment": "",
+      "command": "store",
+      "target": "asdfasfw3f$$$",
+      "targets": [],
+      "value": "varPasswd"
+    }, {
+      "id": "f0c8b409-c303-4ece-a316-d7bbcc63a1cf",
+      "comment": "",
+      "command": "run",
+      "target": "project_2_login_test_8_FIN",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6a95b1a5-b9b9-4904-9ec5-73668c38c409",
+    "name": "project_2_login_test_11_FIN_empty_login_and_password",
+    "commands": [{
+      "id": "734c7c5d-a2dc-4b70-89c2-3d0a2b268bb8",
+      "comment": "",
+      "command": "store",
+      "target": "",
+      "targets": [],
+      "value": "varLogin "
+    }, {
+      "id": "74850f7b-95ba-40a6-b787-4d9bc1dd2fb4",
+      "comment": "",
+      "command": "store",
+      "target": "",
+      "targets": [],
+      "value": "varPasswd"
+    }, {
+      "id": "ab9fb4bc-ad2f-47a6-82f6-6ed322820470",
+      "comment": "",
+      "command": "run",
+      "target": "project_2_login_test_8_FIN",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "49ca1bd4-a4b4-4c4d-b5bf-b32aebe7f1cd",
+    "name": "project_2_login_test_12_FIN_wrong_email_correct_password",
+    "commands": [{
+      "id": "42f6a250-d3e7-468b-9427-ae0d90e725cf",
+      "comment": "",
+      "command": "store",
+      "target": "qq@",
+      "targets": [],
+      "value": "varLogin "
+    }, {
+      "id": "4b20848d-b4b5-46a4-b790-4e6fe7eefdf2",
+      "comment": "",
+      "command": "store",
+      "target": "!sdfw34r3534",
+      "targets": [],
+      "value": "varPasswd"
+    }, {
+      "id": "80473c31-bbe9-4598-aa86-0a942a763db9",
+      "comment": "",
+      "command": "run",
+      "target": "project_2_login_test_8_FIN",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f7e04da3-4245-4e0c-8cda-47dd077f67c4",
+    "name": "project_2_login_test_13_FIN_wrong_email_wrong_password",
+    "commands": [{
+      "id": "b569888a-f823-4fc8-a669-0fdb13fa47e4",
+      "comment": "",
+      "command": "store",
+      "target": "qq@",
+      "targets": [],
+      "value": "varLogin "
+    }, {
+      "id": "938e6a87-fd54-459e-ab0b-3785958013dc",
+      "comment": "",
+      "command": "store",
+      "target": "qq",
+      "targets": [],
+      "value": "varPasswd"
+    }, {
+      "id": "a5f113d0-671f-4cfd-8359-63ac196e9b1d",
+      "comment": "",
+      "command": "run",
+      "target": "project_2_login_test_8_FIN",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a2f95bb4-3113-41cb-8f4e-8b8b032f1b1a",
+    "name": "project_2_login_test_14_FIN_correct_email_wrong_password",
+    "commands": [{
+      "id": "f7736851-82d9-49f3-b871-3330cc3f54e0",
+      "comment": "",
+      "command": "store",
+      "target": "qq@o.pl",
+      "targets": [],
+      "value": "varLogin "
+    }, {
+      "id": "2ca49777-c223-49be-9fe2-46dbb846520b",
+      "comment": "",
+      "command": "store",
+      "target": "qq9764556vfdgvdg!",
+      "targets": [],
+      "value": "varPasswd"
+    }, {
+      "id": "437b352e-922b-4d9b-bfe7-7f1e9506a8a4",
+      "comment": "",
+      "command": "run",
+      "target": "project_2_login_test_8_FIN",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1e6a1408-aa11-40a7-8205-3a0baaf129f0",
+    "name": "project_2_login_test_15_FIN_correct_email_correct_password",
+    "commands": [{
+      "id": "556a476d-2930-4e2a-b6e1-9437f0c2ce9c",
+      "comment": "",
+      "command": "store",
+      "target": "qq@o.pl",
+      "targets": [],
+      "value": "varLogin "
+    }, {
+      "id": "f824897c-f933-4e81-8c99-2779b9b469e3",
+      "comment": "",
+      "command": "store",
+      "target": "qq",
+      "targets": [],
+      "value": "varPasswd"
+    }, {
+      "id": "cf53ecd5-01fd-415d-b23c-673dfa4995d1",
+      "comment": "",
+      "command": "run",
+      "target": "project_2_login_test_8_FIN",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5bf2ab2f-e4a0-4ed5-8a5c-5a48171dfc79",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["db281004-e9a2-42a4-ab67-73d79f7cb954"]
+  }, {
+    "id": "6c47e637-adb1-4d19-aea7-f14cf91db116",
+    "name": "suit_projrect_register_login_test",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4a9edc97-69af-4998-a9fd-d8708b40fb6e", "15e607a6-4987-4a3e-a2ff-af0c6dd41b6d", "6a95b1a5-b9b9-4904-9ec5-73668c38c409", "49ca1bd4-a4b4-4c4d-b5bf-b32aebe7f1cd", "f7e04da3-4245-4e0c-8cda-47dd077f67c4", "a2f95bb4-3113-41cb-8f4e-8b8b032f1b1a", "1e6a1408-aa11-40a7-8205-3a0baaf129f0"]
+  }],
+  "urls": ["http://automationpractice.com/index.php"],
+  "plugins": []
+}
